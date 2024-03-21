@@ -3,12 +3,21 @@ import { baseRoutes } from './base.routes';
 import { moduleRoutes } from './module';
 import { layoutRoutes } from './layout.routes';
 import { Layout } from '@/view/layout';
+import { PageNotFound } from '@/view/error/NotFound';
 
 export const browserRouter = createBrowserRouter([
     {
         path: '/',
         Component: Layout,
-        children: [...layoutRoutes, ...moduleRoutes],
+        children: [
+            ...layoutRoutes,
+            ...moduleRoutes,
+            // 404
+            {
+                path: '*',
+                Component: PageNotFound,
+            },
+        ],
     },
     ...baseRoutes,
 ]);
