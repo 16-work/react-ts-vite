@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { RouterProvider } from 'react-router-dom';
 import { browserRouter } from './router/index.ts';
+import 'virtual:svg-icons-register';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>

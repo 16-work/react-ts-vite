@@ -45,6 +45,7 @@
         "typescript": "^5.2.2",
         "unplugin-auto-import": "^0.17.5",
         "vite": "^5.2.0",
-        "vite-plugin-mock": "^3.0.1"
+        "vite-plugin-mock": "^3.0.1",
+        "vite-plugin-svg-icons": "^2.0.1"
     }
 }
