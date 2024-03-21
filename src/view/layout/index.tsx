@@ -1,4 +1,8 @@
+import { useSafariHacks } from './hook/useSafariHacks';
+
 export const Layout = () => {
+    useSafariHacks();
+
     router.navigate = useNavigate();
 
     const { theme } = store.global();
