@@ -9,6 +9,7 @@ export const setAutoImport = () => {
 
                 // 自定义api
                 {
+                    '@/common/store': ['store'],
                     'use-immer': ['useImmer'],
                     '@/common/util/env': ['env'],
                     '@/common/util/format': ['format'],
