@@ -2,4 +2,6 @@
 
 declare interface MetaEnv {
     VITE_ENV: string;
+    VITE_PORT: number;
+    VITE_HOST: string;
 }

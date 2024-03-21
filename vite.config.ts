@@ -3,6 +3,7 @@ import { alias } from './config/vite/alias';
 import { ConfigEnv, loadEnv } from 'vite';
 import path from 'path';
 import { parseEnv } from './config/vite/utils';
+import { setServer } from './config/vite/server';
 
 export default ({ mode }: ConfigEnv) => {
     const root = path.resolve(__dirname, './config/env');
@@ -12,5 +13,6 @@ export default ({ mode }: ConfigEnv) => {
         plugins: [react()],
         resolve: { alias },
         envDir: './config/env', // 读取环境变量目录
+        server: setServer(env),
     };
 };
