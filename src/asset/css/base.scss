@@ -1,8 +1,10 @@
+@import '../font/index.scss';
 @import './common.scss';
 
 * {
     margin: 0;
     padding: 0;
+    font-family: 'electrolize';
 }
 
 #root {
