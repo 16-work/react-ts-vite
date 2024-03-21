@@ -6,6 +6,7 @@ export const setAutoImport = () => {
             imports: [
                 // 内置api
                 'react',
+                'react-router-dom',
 
                 // 自定义api
                 {
