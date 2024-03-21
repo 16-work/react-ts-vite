@@ -14,6 +14,7 @@ export const setAutoImport = () => {
                     'use-immer': ['useImmer'],
                     '@/common/store': ['store'],
                     '@/common/util/env': ['env'],
+                    'react-hook-form': ['useForm'],
                     '@/common/util/format': ['format'],
                     'react-toastify': [['toast', 'msg']],
                     '@/common/util/localCache': ['localCache'],
