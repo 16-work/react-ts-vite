@@ -9,6 +9,18 @@
 
 
 
+/* 响应式 */ 
+$minFontSize: 12px;
+$maxFontSize: 20px;
+$minScreen: 430px;
+$maxScreen: 1536px;
+
+html {
+    font-size: clamp($minFontSize, calc(7px + (($maxFontSize - $minFontSize) / ($maxScreen - $minScreen) * 100vw)), $maxFontSize);
+}
+
+
+
 /* 滚动条 */
 ::-webkit-scrollbar {
     width:6px;
