@@ -11,6 +11,7 @@ export const setAutoImport = () => {
                 {
                     'use-immer': ['useImmer'],
                     '@/common/util/env': ['env'],
+                    '@/common/util/format': ['format'],
                     '@/common/tool/localCache': ['localCache'],
                 },
             ],
