@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    height: 100vh;
+}
+
+
+
+/* 滚动条 */
+::-webkit-scrollbar {
+    width:6px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow:inset006pxrgba(0,0,0,0.3);
+    border-radius:10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius:10px;
+    background:var(--c-scrollbar);
+    -webkit-box-shadow:inset006pxrgba(0,0,0,0.5);
+}
