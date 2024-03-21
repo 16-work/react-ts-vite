@@ -10,7 +10,9 @@ export const setAutoImport = () => {
 
                 // 自定义api
                 {
+                    '@/api': ['api'],
                     '@/router': ['router'],
+                    '@/api/axios': ['http'],
                     'use-immer': ['useImmer'],
                     '@/common/store': ['store'],
                     '@/common/util/env': ['env'],
