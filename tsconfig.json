@@ -26,6 +26,7 @@
   },
   "include": [
     "config/**/*.ts",
+    "config/**/*.d.ts",
     "mock/**/*.mock.ts", 
     "vite.config.ts", 
     "src"
