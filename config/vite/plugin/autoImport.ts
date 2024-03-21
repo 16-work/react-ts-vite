@@ -12,6 +12,7 @@ export const setAutoImport = () => {
                     'use-immer': ['useImmer'],
                     '@/common/util/env': ['env'],
                     '@/common/util/format': ['format'],
+                    'react-toastify': [['toast', 'msg']],
                     '@/common/tool/localCache': ['localCache'],
                 },
             ],
