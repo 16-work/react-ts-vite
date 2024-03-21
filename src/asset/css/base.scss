@@ -25,7 +25,8 @@ html {
 
 /* 滚动条 */
 ::-webkit-scrollbar {
-    width:6px;
+    width: 6px;
+    height: 6px;
 }
 ::-webkit-scrollbar-track {
     -webkit-box-shadow:inset006pxrgba(0,0,0,0.3);
