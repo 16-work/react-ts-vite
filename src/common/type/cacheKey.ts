@@ -1,1 +1,1 @@
-export type CacheKey = '';
+export type CacheKey = 'theme';
