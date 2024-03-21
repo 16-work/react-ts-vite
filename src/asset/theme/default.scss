@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// 导入默认主题
+@import './theme-light.scss';
+
+@layer base {
+    :root {
+        @extend .base;
+        @extend .other;   
+    }
+}

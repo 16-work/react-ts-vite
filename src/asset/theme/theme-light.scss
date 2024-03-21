@@ -1,0 +1,26 @@
+// 其它颜色：只用颜色变量的话可以只写这(eg. var(--c-gray-100))
+.other {
+    --c-gray-100:#D5DAE6;
+    --c-gray-200:#B5B5B5;
+    --c-gray-300:rgba(255, 255, 255, 0.60);
+    --c-gray-400:#9F9F9F;
+    --c-gray-500:rgba(255, 255, 255, 0.10);
+    --c-gray-600:#363649;
+    --c-gray-700:#303030;
+    --c-gray-800:#1F1F33;
+    --c-gray-900:#11112A;
+}
+
+// 主题色
+.base {
+    --c-primary: #D64F49;
+    --c-second: #E6AE54;
+}
+
+@layer base {
+    /* 亮主题 */
+    .theme-light {
+        @extend .base;
+        @extend .other;
+    }
+}
