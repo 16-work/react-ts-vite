@@ -85,3 +85,21 @@
         background: var(--c-popover-bg) !important;
     }
 }
+
+
+
+/* 上传文件 */
+.ant-upload-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden;
+
+    .ant-upload {
+        width: 100% !important;
+        height: 100% !important;
+        overflow: hidden;
+    }
+    .ant-upload:hover {
+        border-color: var(--c-second) !important;
+    }
+}
