@@ -1,0 +1,73 @@
+/* 分页器(正常版) */ 
+.ant-pagination {
+    // 左右箭头
+    .ant-pagination-item-link {
+        color: var(--c-text-common) !important;
+    }
+    .ant-pagination-item-link:hover {
+        color: var(--c-primary) !important;
+    }
+
+    // 页数按钮
+    .ant-pagination-item {
+        background: var(--c-pager-btn-bg);
+
+        a {
+            color: var(--c-text-common); 
+        }
+        a:hover {
+            color: var(--c-primary);
+        }
+    }
+
+    // 页数按钮(激活)
+    .ant-pagination-item-active {
+        border-color: var(--c-primary) !important;
+
+        a {
+            color: var(--c-primary);
+        }
+    }
+
+    // 省略
+    .ant-pagination-item-ellipsis{
+        color: var(--c-text-common) !important;
+    }
+    .ant-pagination-item-link-icon {
+        color: var(--c-primary) !important;
+    }
+
+    // 快捷跳转
+    .ant-pagination-options-quick-jumper {
+        color: var(--c-text-common);
+
+        input {
+            background: var(--c-pager-btn-bg) !important;
+            border: 1px solid var(--c-gray-100) !important;
+            box-shadow: none !important;
+            color: var(--c-text-common);
+        }
+    }
+
+    // 每页条数选择
+    .ant-select {
+        display: none;
+    }
+}
+
+/* 分页器(简洁版) */ 
+.ant-pagination-simple{
+    display: flex;
+    align-items: center;
+
+    .ant-pagination-simple-pager {
+        color: var(--c-text-common);
+
+        input {
+            background: var(--c-gray-800) !important;
+            border: var(--c-gray-800) !important;
+            box-shadow: none;
+            color: var(--c-text-common);
+        }
+    }
+}
