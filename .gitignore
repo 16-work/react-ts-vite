@@ -1,5 +1,6 @@
 # config
 config/env/.env.production
+config/declare/auto-import.d.ts
 
 # Logs
 logs
