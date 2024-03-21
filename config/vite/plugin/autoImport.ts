@@ -10,6 +10,7 @@ export const setAutoImport = () => {
                 // 自定义api
                 {
                     'use-immer': ['useImmer'],
+                    '@/common/util/env': ['env'],
                 },
             ],
 
