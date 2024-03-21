@@ -71,3 +71,17 @@
         }
     }
 }
+
+
+
+/* 气泡框 */
+.ant-popover{
+    // 背景
+    .ant-popover-inner{
+        padding: 0;
+        background: var(--c-popover-bg) !important;
+    }
+    .ant-popover-arrow::before{
+        background: var(--c-popover-bg) !important;
+    }
+}

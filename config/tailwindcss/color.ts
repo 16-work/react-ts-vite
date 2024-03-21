@@ -13,4 +13,6 @@ export const cusColor = {
     'gray-750': 'var(--c-gray-750)',
     'gray-800': 'var(--c-gray-800)',
     'gray-900': 'var(--c-gray-900)',
+
+    'hr-1': 'var(--c-hr-1)',
 };
