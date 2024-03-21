@@ -10,8 +10,9 @@ export const setAutoImport = () => {
 
                 // 自定义api
                 {
-                    '@/common/store': ['store'],
+                    '@/router': ['router'],
                     'use-immer': ['useImmer'],
+                    '@/common/store': ['store'],
                     '@/common/util/env': ['env'],
                     '@/common/util/format': ['format'],
                     'react-toastify': [['toast', 'msg']],

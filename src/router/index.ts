@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { NavigateFunction, createBrowserRouter } from 'react-router-dom';
 import { baseRoutes } from './base.routes';
 import { moduleRoutes } from './module';
 import { layoutRoutes } from './layout.routes';
@@ -12,3 +12,8 @@ export const browserRouter = createBrowserRouter([
     },
     ...baseRoutes,
 ]);
+
+export const router = {
+    // 可供layout内的所有路由使用
+    navigate: {} as NavigateFunction,
+};

@@ -1,4 +1,6 @@
 export const Layout = () => {
+    router.navigate = useNavigate();
+
     return (
         <div className={`h-screen flex flex-col overflow-hidden`}>
             {/* main */}
