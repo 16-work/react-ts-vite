@@ -1,0 +1,8 @@
+.base-btn {
+    @apply duration-300 select-none;
+}
+
+// 渐变主题白字
+.btn-primary {
+    @apply base-btn gradient text-common font-bold;
+}
