@@ -16,7 +16,7 @@ export const setAutoImport = () => {
                     '@/common/util/env': ['env'],
                     '@/common/util/format': ['format'],
                     'react-toastify': [['toast', 'msg']],
-                    '@/common/tool/localCache': ['localCache'],
+                    '@/common/util/localCache': ['localCache'],
                 },
             ],
 
