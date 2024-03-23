@@ -9,10 +9,10 @@ export const Layout = () => {
 
     return (
         <div className={`${theme} h-screen flex flex-col overflow-hidden`}>
-            {/* main */}
-            <main className="flex-1 overflow-auto">
+            <ReateAnimation>
+                {/* main */}
                 <Outlet />
-            </main>
+            </ReateAnimation>
         </div>
     );
 };
