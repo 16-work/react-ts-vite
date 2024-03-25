@@ -14,4 +14,6 @@ export default create<WalletStore>((set) => ({
             return { account: accountInfo };
         });
     },
+
+    explorerURL: 'https://snowtrace.io',
 }));

@@ -123,4 +123,11 @@ export const format = {
         let size = Math.floor((fileSize / Math.pow(1024, index)) * 100);
         return (size / 100).toFixed(2) + unitArr[index];
     },
+
+    address: (str: string, first: number, last: number) => {
+        if (str && typeof str != 'string') str = str + '';
+        if (!str || str.length <= last + first) return str;
+
+        return str.slice(0, first) + '...' + str.slice(str.length - last, str.length);
+    },
 };
