@@ -31,4 +31,5 @@ export const modal = createWeb3Modal({
     chains: defaultChains,
     projectId,
     enableAnalytics: true, // Optional - defaults to your Cloud configuration
+    allowUnsupportedChain: true,
 });
