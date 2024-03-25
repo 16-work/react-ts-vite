@@ -1,10 +1,19 @@
+import { BrowserProvider } from 'ethers';
+import { SiweMessage } from 'siwe';
 import { defaultChains } from './chains';
 import { modal } from './init';
 
 export default () => {
     const { account, setAccount } = store.wallet();
 
+    // 获取Provider
+    const getProvider = () => {
+        return new BrowserProvider(modal.getWalletProvider()!);
+    };
+
     return {
+        getProvider,
+
         // 打开连接窗口
         connect: () => {
             modal.open();
@@ -63,6 +72,27 @@ export default () => {
                         msg.error('Failed to Switch Chain!');
                     }
                 });
+        },
+
+        // 获取验证信息
+        getSignMessage: async () => {
+            const signer = await getProvider().getSigner();
+            const siweMessage = new SiweMessage({
+                domain: window.location.host,
+                address: signer.address, // to EIP55
+                statement: 'App needs you to login',
+                uri: window.location.origin,
+                version: '1',
+                chainId: account.chainId,
+            });
+
+            const message = siweMessage.prepareMessage();
+            const sign = await signer.signMessage(message);
+            return {
+                address: signer.address,
+                sign,
+                message,
+            };
         },
     };
 };
