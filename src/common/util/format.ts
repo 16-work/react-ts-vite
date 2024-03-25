@@ -18,9 +18,10 @@ export const format = {
         else return moment(time).format('YYYY/MM/DD HH:mm:ss');
     },
 
-    num: (num: number | string, dec: number = 3, sub: boolean = false) => {
-        if (typeof num == 'number') {
-            if (num < 1000) return num + '';
+    num: (num: number | bigint | string, dec: number = 3, sub: boolean = false) => {
+        if (typeof num == 'bigint') {
+            num = num.toString();
+        } else if (typeof num == 'number') {
             num = num + '';
         }
 
@@ -40,8 +41,10 @@ export const format = {
         let newNum = newNums.reverse().join('');
 
         if (typeof dec == 'number' && dec > 0 && typeof deci != 'undefined') {
-            let zeroCount = 0;
             if (sub) {
+                // 下标
+                let zeroCount = 0;
+
                 for (let i = 0; i < deci.length; i++) {
                     if (deci.charAt(i) == '0') {
                         zeroCount++;
@@ -49,20 +52,27 @@ export const format = {
                         break;
                     }
                 }
-            }
-            if (deci.length > zeroCount) {
-                let dot = '.';
-                if (zeroCount > 3) {
-                    newNum += `.0<sub>${zeroCount}</sub>`;
-                    deci = deci.substring(zeroCount);
-                    dot = '';
-                }
 
-                // 存在小数则加回
+                if (deci.length > zeroCount) {
+                    let dot = '.';
+                    if (zeroCount > 3) {
+                        newNum += `.0<sub>${zeroCount}</sub>`;
+                        deci = deci.substring(zeroCount);
+                        dot = '';
+                    }
+
+                    // 存在小数则加回
+                    if (deci.length > dec) {
+                        deci = deci.substring(0, dec);
+                    }
+                    newNum += dot + deci;
+                }
+            } else {
+                // 无下标
                 if (deci.length > dec) {
                     deci = deci.substring(0, dec);
                 }
-                newNum += dot + deci;
+                newNum += '.' + deci;
             }
         }
 
