@@ -1,7 +1,9 @@
+import { useWatchAccount } from '@/hook/wallet/watch';
 import { useSafariHacks } from './hook/useSafariHacks';
 
 export const Layout = () => {
     useSafariHacks();
+    useWatchAccount();
 
     router.navigate = useNavigate();
 
