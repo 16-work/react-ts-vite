@@ -1,4 +1,4 @@
 import global from './global';
-import wallet from './wallet';
+import web3 from './web3';
 
-export const store = { global, wallet };
+export const store = { global, web3 };

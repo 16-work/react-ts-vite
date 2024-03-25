@@ -1,5 +1,5 @@
 export const CopyHash = (props: { hash: string; type: 'address' | 'trx'; format?: number[]; className?: string }) => {
-    const { explorerURL } = store.wallet();
+    const { explorerURL } = store.web3();
 
     // 格式化hash值
     const formatHash = props.format?.length === 2 ? format.address(props.hash, props.format[0], props.format[1]) : props.hash;

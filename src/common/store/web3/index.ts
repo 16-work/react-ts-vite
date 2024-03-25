@@ -1,7 +1,7 @@
 import { create } from 'zustand';
-import { WalletStore } from './types';
+import { Web3Store } from './types';
 
-export default create<WalletStore>((set) => ({
+export default create<Web3Store>((set) => ({
     account: localCache.get('wallet', { address: '', chainId: 1 }),
     setAccount: (newAccount) => {
         set((state) => {

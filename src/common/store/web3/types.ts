@@ -1,4 +1,4 @@
-export interface WalletStore {
+export interface Web3Store {
     account: {
         address: string;
         chainId: number;

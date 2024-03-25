@@ -4,7 +4,7 @@ import { defaultChains } from './chains';
 import { modal } from './init';
 
 export default () => {
-    const { account, setAccount } = store.wallet();
+    const { account, setAccount } = store.web3();
 
     // 获取Provider
     const getProvider = () => {

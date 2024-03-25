@@ -2,7 +2,7 @@ import { useWeb3ModalAccount } from '@web3modal/ethers/react';
 
 export const useWatchAccount = () => {
     const modalAccount = useWeb3ModalAccount();
-    const { account, setAccount } = store.wallet();
+    const { account, setAccount } = store.web3();
 
     // 连接成功
     useEffect(() => {
