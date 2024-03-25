@@ -1,1 +1,1 @@
-export type CacheKey = 'theme';
+export type CacheKey = 'theme' | 'wallet';
