@@ -6,3 +6,8 @@
 .btn-primary {
     @apply base-btn gradient text-common font-bold;
 }
+
+// 次要按钮
+.btn-second {
+    @apply base-btn bg-transparent border border-gray-200 hover:border-gray-600 text-gray-200 hover:text-gray-600 text-tip;
+}
