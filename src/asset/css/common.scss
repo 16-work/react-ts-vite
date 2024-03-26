@@ -8,3 +8,13 @@
     @apply bg-gradient-to-r from-[--c-primary] to-[--c-second]
     bg-[length:200%_200%] bg-[0%_0%] hover:bg-[100%_100%] transition-all duration-500;
 } 
+
+// 定位居中
+.position-center {
+    @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+// 激活行
+.row-active {
+    @apply bg-transparent hover:bg-[--c-row-active] duration-300;
+}

@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "vite --mode dev",
         "mock": "vite --mode mock",
-        "build": "tsc && vite build --mode production",
+        "build": "vite build --mode production && tsc",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
         "prepare": "husky install",
@@ -24,6 +24,7 @@
         "react-copy-to-clipboard": "^5.1.0",
         "react-dom": "^18.2.0",
         "react-hook-form": "^7.51.1",
+        "react-infinite-scroll-component": "^6.1.0",
         "react-router-dom": "^6.22.3",
         "react-toastify": "^10.0.5",
         "siwe": "^2.1.4",

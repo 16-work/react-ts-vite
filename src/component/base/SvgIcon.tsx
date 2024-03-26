@@ -5,6 +5,7 @@ interface Props {
     color?: string;
     fill?: string;
     className?: string;
+    onClick?: () => void;
 }
 
 export const SvgIcon = (props: Props) => {
@@ -20,6 +21,7 @@ export const SvgIcon = (props: Props) => {
                 height: `${pxToRem(props.height || props.width)}`,
                 color: props.color,
             }}
+            onClick={props.onClick}
         >
             <use xlinkHref={`#icon-${props.name}`} fill={props.fill || props.color} />
         </svg>

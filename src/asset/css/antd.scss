@@ -103,3 +103,18 @@
         border-color: var(--c-second) !important;
     }
 }
+
+
+
+/* 模态框 */
+.ant-modal-content {
+    background: var(--c-popover-bg) !important;
+    padding: 0 !important;
+    border-radius: 1rem !important;
+    overflow: hidden;
+
+    // 标题
+    .ant-modal-title {
+        background: var(--c-popover-bg) !important;
+    }
+}
