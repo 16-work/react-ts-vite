@@ -13,3 +13,8 @@
 .position-center {
     @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
 }
+
+// 激活行
+.row-active {
+    @apply bg-transparent hover:bg-[--c-row-active] duration-300;
+}
