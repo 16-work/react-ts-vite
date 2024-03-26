@@ -42,7 +42,7 @@ export const format = {
 
         if (typeof dec == 'number' && dec > 0 && typeof deci != 'undefined') {
             if (sub) {
-                // 下标
+                // 下标(要使用html显示)
                 let zeroCount = 0;
 
                 for (let i = 0; i < deci.length; i++) {
