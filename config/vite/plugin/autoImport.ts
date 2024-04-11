@@ -17,6 +17,7 @@ export const setAutoImport = () => {
                     '@/common/store': ['store'],
                     '@/common/util/env': ['env'],
                     'react-hook-form': ['useForm'],
+                    numeral: [['default', 'numeral']],
                     '@/common/util/format': ['format'],
                     'react-toastify': [['toast', 'msg']],
                     '@/common/util/localCache': ['localCache'],
