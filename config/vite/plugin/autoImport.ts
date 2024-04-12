@@ -11,7 +11,6 @@ export const setAutoImport = () => {
                 // 自定义api
                 {
                     '@/api': ['api'],
-                    '@/router': ['router'],
                     '@/api/axios': ['http'],
                     'use-immer': ['useImmer'],
                     '@/common/store': ['store'],
@@ -22,6 +21,7 @@ export const setAutoImport = () => {
                     '@/common/util/format': ['format'],
                     'react-toastify': [['toast', 'msg']],
                     '@/common/util/localCache': ['localCache'],
+                    '@/view/layout/hook/useInitRouterFun': ['router'],
                 },
             ],
 
