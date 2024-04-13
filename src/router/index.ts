@@ -1,8 +1,7 @@
-import { NavigateFunction, createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
+import { Layout } from '@/view/layout';
 import { baseRoutes } from './base.routes';
 import { moduleRoutes } from './module';
-import { layoutRoutes } from './layout.routes';
-import { Layout } from '@/view/layout';
 import { PageNotFound } from '@/view/error/NotFound';
 
 export const browserRouter = createBrowserRouter([
@@ -10,7 +9,7 @@ export const browserRouter = createBrowserRouter([
         path: '/',
         Component: Layout,
         children: [
-            ...layoutRoutes,
+            ...baseRoutes,
             ...moduleRoutes,
             // 404
             {
@@ -19,10 +18,4 @@ export const browserRouter = createBrowserRouter([
             },
         ],
     },
-    ...baseRoutes,
 ]);
-
-export const router = {
-    // 可供layout内的所有路由使用
-    navigate: {} as NavigateFunction,
-};

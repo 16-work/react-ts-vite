@@ -18,9 +18,13 @@ export const setAutoImport = () => {
                     '@/common/store': ['store'],
                     '@/common/util/env': ['env'],
                     'react-hook-form': ['useForm'],
+                    '@/common/util/debug': ['debug'],
+                    numeral: [['default', 'numeral']],
+                    '@/common/util/ahooks': ['ahooks'],
                     '@/common/util/format': ['format'],
                     'react-toastify': [['toast', 'msg']],
                     '@/common/util/localCache': ['localCache'],
+                    '@/view/layout/hook/useInitRouterFun': ['router'],
                 },
             ],
 
