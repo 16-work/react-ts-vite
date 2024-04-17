@@ -115,7 +115,21 @@ export const InputNum = (props: {
             input.text = '';
         } else {
             input.num = type === 'number' ? Number(input.text) : input.text;
-            input.text = numeral(input.text).format(format);
+
+            // 数字超过9,999,999,999,999,99后，请采用大数记法格式化，或使用原值
+            if (type === 'bigint' && BigInt(input.num) > BigInt('999999999999999')) {
+                input.text = numeral(input.text).format('0.000e+0', Math.floor);
+            } else {
+                // 获取整数部分
+                const indexOfDot = input.text.indexOf('.');
+                const intPart = indexOfDot !== -1 ? input.text.substring(0, indexOfDot) : input.text;
+                // 数值超大采用大数记法格式化
+                if (BigInt(intPart) >= BigInt('999999999999999')) {
+                    input.text = numeral(input.text).format('0.000e+0', Math.floor);
+                }
+                // 数值正常采用设置值格式化
+                else input.text = numeral(input.text).format(format);
+            }
         }
 
         // 更新值
