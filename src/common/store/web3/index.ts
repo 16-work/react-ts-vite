@@ -15,5 +15,18 @@ export default create<Web3Store>((set) => ({
         });
     },
 
+    modal: {
+        isOpen: false,
+        type: 'Connect',
+    },
+    setModal: (newValue) => {
+        set((state) => {
+            const isOpen = newValue.isOpen !== undefined ? newValue.isOpen : state.modal.isOpen;
+            const type = newValue.type !== undefined ? newValue.type : state.modal.type;
+
+            return { modal: { isOpen, type } };
+        });
+    },
+
     explorerURL: 'https://snowtrace.io',
 }));
