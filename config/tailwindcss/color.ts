@@ -3,6 +3,9 @@ export const cusColor = {
     primary: 'var(--c-primary)',
     second: 'var(--c-second)',
 
+    error: 'var(--c-error)',
+    warning: 'var(--c-warning)',
+
     'gray-100': 'var(--c-gray-100)',
     'gray-200': 'var(--c-gray-200)',
     'gray-300': 'var(--c-gray-300)',
