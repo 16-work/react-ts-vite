@@ -1,8 +1,18 @@
 import { useWeb3ModalAccount } from '@web3modal/ethers/react';
+import { modal } from './init';
 
 export const useWatchAccount = () => {
     const modalAccount = useWeb3ModalAccount();
-    const { account, setAccount } = store.web3();
+    const { account, setAccount, setModal } = store.web3();
+
+    // 监听modal事件
+    modal.subscribeEvents((e) => {
+        const eventName = e.data.event;
+
+        // 切换modal启动状态
+        if (eventName === 'MODAL_OPEN') setModal({ isOpen: true });
+        else if (eventName === 'MODAL_CLOSE' || eventName === 'CONNECT_SUCCESS') setModal({ isOpen: false });
+    });
 
     // 连接成功
     useEffect(() => {
