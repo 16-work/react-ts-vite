@@ -12,10 +12,7 @@ export default {
         extend: {
             screens: screenSizes,
 
-            backgroundColor: cusColor,
-            textColor: cusColor,
-            borderColor: cusColor,
-            fill: cusColor,
+            colors: cusColor,
 
             fontSize: commonSizes,
             width: commonSizes,
@@ -27,6 +24,7 @@ export default {
             margin: commonSizes,
             inset: commonSizes,
             gap: commonSizes,
+            borderWidth: commonSizes,
             borderRadius: commonSizes,
             lineHeight: commonSizes,
         },
