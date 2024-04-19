@@ -2,9 +2,10 @@ import { BrowserProvider } from 'ethers';
 import { SiweMessage } from 'siwe';
 import { defaultChains } from './chains';
 import { modal } from './init';
+import { Web3ModalType } from '@/common/store/web3/types';
 
 export default () => {
-    const { account, setAccount } = store.web3();
+    const { account, setAccount, setModal } = store.web3();
 
     // 获取Provider
     const getProvider = () => {
@@ -14,16 +15,17 @@ export default () => {
     return {
         getProvider,
 
-        // 打开连接窗口
-        connect: () => {
-            modal.open();
+        // 打开模态框
+        open: (type: Web3ModalType) => {
+            setModal({ type: type });
+            modal.open({ view: type });
         },
 
         // 断开连接
         disconnect: () => {
             modal.disconnect();
             setAccount({ address: '' });
-            console.log('Disconnection Successful!');
+            msg.success('Disconnection Successful!', { autoClose: 500 });
         },
 
         // 判断是否支持当前链
