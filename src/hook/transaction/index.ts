@@ -9,7 +9,7 @@ interface TransactParams {
 
 export default () => {
     const { account } = store.web3();
-    const { getProvider } = hook.wallet();
+    const { getProvider } = hooks.wallet();
 
     return {
         // send

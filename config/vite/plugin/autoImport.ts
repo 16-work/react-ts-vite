@@ -11,7 +11,7 @@ export const setAutoImport = () => {
                 // 自定义api
                 {
                     '@/api': ['api'],
-                    '@/hook': ['hook'],
+                    '@/hook': ['hooks'],
                     '@/router': ['router'],
                     '@/api/axios': ['http'],
                     'use-immer': ['useImmer'],

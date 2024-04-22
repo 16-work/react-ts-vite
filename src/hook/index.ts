@@ -1,4 +1,4 @@
 import wallet from './wallet';
 import transaction from './transaction';
 
-export const hook = { wallet, transaction };
+export const hooks = { wallet, transaction };
