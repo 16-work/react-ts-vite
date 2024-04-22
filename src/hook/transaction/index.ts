@@ -1,12 +1,5 @@
 import { Contract } from 'ethers';
 
-interface TransactParams {
-    contract: Contract;
-    method: string;
-    data: any[];
-    value?: number | string;
-}
-
 export default () => {
     const { account } = store.web3();
     const { getProvider } = hooks.wallet();
@@ -42,7 +35,7 @@ export default () => {
         },
 
         // transact
-        transact: async ({ contract, method, data = [], value }: TransactParams) => {
+        transact: async ({ contract, method, data = [], value }: { contract: Contract; method: string; data: any[]; value?: bigint }) => {
             try {
                 const contractAddress = await contract.getAddress();
                 const signer = await getProvider().getSigner();
@@ -52,14 +45,13 @@ export default () => {
                     from: signer.address,
                     to: contractAddress,
                     data: contract.interface.encodeFunctionData(method, [...data]),
-                    ...(value ? { value } : {}),
+                    ...(value ? { value: `0x${value.toString(16)}` } : {}),
                 };
                 const gasLimit = await getProvider().estimateGas(params);
                 console.log(`call contract: ${contractAddress}, method: ${method}, params:`, params);
 
                 const hash = await signer.sendUncheckedTransaction({
                     ...params,
-                    ...(value ? { value } : {}),
                     gasLimit,
                 });
 
