@@ -14,7 +14,7 @@ export const BoxScrollLoad = (props: { id: string; list: any[]; hasMore: boolean
                         <Load />
                     </div>
                 }
-                endMessage={<Divider className="!text-18 !text-tip">It is all, nothing more.</Divider>}
+                endMessage={<Divider className="text-18 !text-[--c-text-tip] select-none">It is all, nothing more.</Divider>}
             >
                 {props.children}
             </InfiniteScroll>
