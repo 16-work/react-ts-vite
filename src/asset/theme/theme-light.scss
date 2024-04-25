@@ -7,18 +7,20 @@
     --c-gray-500:rgba(255, 255, 255, 0.10);
     --c-gray-600:#363649;
     --c-gray-700:#303030;
+    --c-gray-750:#333333;
     --c-gray-800:#1F1F33;
     --c-gray-900:#11112A;
 
     --c-scrollbar: rgba(0, 0, 0, 0.2);
 
-    --c-text-common: #333;
+    --c-text-common: var(--c-gray-750);
     --c-text-tip: #999;
 
     --c-hr-1: #ccc;
 
     --c-pager-btn-bg: #fff;
     --c-popover-bg: #fff;
+    --c-modal-bg: var(--c-gray-100);
 
     --c-row-active: rgba(0, 0, 0, 0.10);
 }
