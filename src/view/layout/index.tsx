@@ -1,13 +1,14 @@
 import { useWatchAccount } from '@/hook/wallet/watch';
 import { useInitRouterFun } from './hook/useInitRouterFun';
 import { useSafariHacks } from './hook/useSafariHacks';
+import { useInitHooks } from '@/hook';
 
 export const Layout = () => {
     useSafariHacks();
-    useWatchAccount();
-
-    router.navigate = useNavigate();
     useInitRouterFun();
+
+    useInitHooks();
+    useWatchAccount();
 
     const { theme } = store.global();
 

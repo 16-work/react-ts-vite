@@ -11,12 +11,12 @@ export const setAutoImport = () => {
                 // 自定义api
                 {
                     '@/api': ['api'],
-                    '@/hook': ['hooks'],
                     '@/router': ['router'],
                     '@/api/axios': ['http'],
                     'use-immer': ['useImmer'],
                     '@/common/store': ['store'],
                     '@/common/util/env': ['env'],
+                    '@/hook/index.tsx': ['hooks'],
                     'react-hook-form': ['useForm'],
                     '@/common/util/debug': ['debug'],
                     numeral: [['default', 'numeral']],
