@@ -1,48 +1,49 @@
 export const InputNum = (props: {
     value: number | string | undefined; // 绑定值（bigint类型传string，其默认为空值时传''）
-    type?: 'number' | 'bigint';
+    type?: 'number' | 'bigint'; // (默认number)
     onChange: (newNum: any) => void; // 值正确且变化时触发
     onError?: (e: string) => void; // 错误信息（未传值时默认使用全局msg提示）
 
-    require?: boolean; // 是否必填
-    requireInt?: boolean; // 是否为整数
-    format?: string; // 格式化规则
+    require?: boolean; // 是否必填 (默认: true)
+    requireInt?: boolean; // 是否为整数 (默认: false)
+    requireNonZero?: boolean; // 是否为非0值 (默认: false)
+    format?: string; // 格式化规则 (默认: int ? 0,0 : 0,0.[000000000000000000] )
 
     min?: string; // 最小值
     max?: string; // 最大值
 
     className?: string;
     placeholder?: string;
+    disabled?: boolean;
 }) => {
     /** props */
     const type = props.type ?? 'number';
 
     const require = props.require ?? true;
-    const requireInt = props.requireInt ?? false;
-    const format = props.format ?? (requireInt || type === 'bigint' ? '0,0' : '0,0.[000000000000000000]');
+    const format = props.format ?? (props.requireInt || type === 'bigint' ? '0,0' : '0,0.[000000000000000000]');
 
     const min = props.min ? (type === 'number' ? Number(props.min) : BigInt(props.min)) : undefined;
     const max = props.max ? (type === 'number' ? Number(props.max) : BigInt(props.max)) : undefined;
 
-    /** state */
+    /** params */
     const input = ahooks.reactive({
         num: props.value,
         text: props.value ? numeral(props.value ?? '').format(format) : '',
     });
 
-    /** methods */
+    /** actions */
     // 校验number
     const validateNumber = () => {
         // 是否为number
         if (isNaN(Number(input.text))) {
-            const error = 'Please enter a number!';
+            const error = 'Please enter a number.';
             if (props.onError) props.onError(error);
             else msg.warning(error);
             return false;
         }
         // 非整数
-        else if (requireInt && Number(input.text) - parseInt(input.text) > 0) {
-            const error = 'Please enter an integer!';
+        else if (props.requireInt && Number(input.text) - parseInt(input.text) > 0) {
+            const error = 'Please enter an integer.';
             if (props.onError) props.onError(error);
             else msg.warning(error);
             return false;
@@ -58,7 +59,7 @@ export const InputNum = (props: {
             BigInt(input.text);
             return true;
         } catch (e) {
-            const error = 'Please enter an integer!';
+            const error = 'Please enter an integer.';
             if (props.onError) props.onError(error);
             else msg.warning(error);
             return false;
@@ -71,14 +72,21 @@ export const InputNum = (props: {
 
         // 小于最小值
         if (min !== undefined && value < min) {
-            const error = `The value cannot be less than ${props.min} !`;
+            const error = `The value cannot be less than ${props.min}.`;
             if (props.onError) props.onError(error);
             else msg.warning(error);
             return false;
         }
         // 大于最大值
         else if (max !== undefined && value > max) {
-            const error = `The value cannot be greater than ${props.max} !`;
+            const error = `The value cannot be greater than ${props.max}.`;
+            if (props.onError) props.onError(error);
+            else msg.warning(error);
+            return false;
+        }
+        // 为非0值
+        else if (props.requireNonZero && input.text === '0') {
+            const error = `The value cannot be 0.`;
             if (props.onError) props.onError(error);
             else msg.warning(error);
             return false;
@@ -91,7 +99,7 @@ export const InputNum = (props: {
         // 空值校验
         input.text = input.text.trim();
         if (require && input.text === '') {
-            const error = 'Please enter a number!';
+            const error = 'Please enter a number.';
             if (props.onError) props.onError(error);
             else msg.warning(error);
             return;
@@ -140,7 +148,7 @@ export const InputNum = (props: {
     ahooks.updateEffect(() => {
         if (props.value !== input.num) {
             input.num = props.value;
-            input.text = numeral(props.value).format(format);
+            input.text = props.value === '' ? '' : numeral(props.value).format(format);
         }
 
         // 清空错误信息
@@ -155,6 +163,7 @@ export const InputNum = (props: {
             className={props.className}
             placeholder={props.placeholder}
             onChange={(e) => (input.text = e.target.value)}
+            disabled={props.disabled}
             onFocus={() => {
                 if (input.num !== undefined) {
                     input.text = String(input.num);

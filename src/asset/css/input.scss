@@ -1,0 +1,8 @@
+.base-input {
+    @apply duration-300 outline-none;
+ }
+ 
+// 灰透明底主题框
+.input-1 {
+     @apply base-input bg-[--c-input-bg] border-2 border-transparent focus:border-second text-common disabled:text-[--c-text-tip] text-18 rounded-6 disabled:cursor-not-allowed;
+}
