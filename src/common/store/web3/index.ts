@@ -29,4 +29,13 @@ export default create<Web3Store>((set) => ({
     },
 
     explorerURL: 'https://snowtrace.io',
+
+    usdtUnitPrice: { tick: '0' },
+    setUsdtUnitPrice: (prices) => {
+        set({
+            usdtUnitPrice: {
+                tick: prices.tick,
+            },
+        });
+    },
 }));

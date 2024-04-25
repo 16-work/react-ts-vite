@@ -12,6 +12,11 @@ export interface Web3Store {
     setModal: (status: { isOpen?: boolean; type?: Web3ModalType }) => void;
 
     explorerURL: string;
+
+    usdtUnitPrice: {
+        tick: string;
+    };
+    setUsdtUnitPrice: (prices: Record<string, string>) => void;
 }
 
 export type Web3ModalType = 'Account' | 'Connect' | 'Networks' | 'ApproveTransaction';
