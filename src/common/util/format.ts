@@ -1,4 +1,4 @@
-import { formatUnits } from 'ethers';
+import { parseUnits, formatUnits } from 'ethers';
 import moment from 'moment';
 
 export const format = {
@@ -26,15 +26,24 @@ export const format = {
         return str.slice(0, first) + '...' + str.slice(str.length - last, str.length);
     },
 
-    tokenPrice: (num: string | number | bigint, format: string = '0,0.00') => {
-        const str = formatUnits(typeof num == 'bigint' ? num : BigInt(num), 18);
-        return numeral(str).format(format);
-    },
+    token: {
+        unit: {
+            origin: (value: string, unit?: number) => {
+                return parseUnits(String(value), unit);
+            },
+            display: formatUnits,
+        },
 
-    usdtPrice: (tokenUnitPrice: number, num: string | number | bigint, format: string = '0,0.00') => {
-        const value = BigInt(num);
-        const usdtValue = (value * BigInt(Math.round(tokenUnitPrice * 10000))) / 10000n;
-        const final = formatUnits(usdtValue, 18);
-        return numeral(final).format(format);
+        price: {
+            common: (num: bigint, format: string = '0,0.00') => {
+                const str = formatUnits(num, 18);
+                return numeral(str).format(format);
+            },
+            usdt: (unitPrice: string, value: bigint, format: string = '0,0.00') => {
+                const usdtValue = (value * BigInt(Math.round(Number(unitPrice) * 10000))) / 10000n;
+                const final = formatUnits(usdtValue, 18);
+                return numeral(final).format(format);
+            },
+        },
     },
 };
