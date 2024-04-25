@@ -13,6 +13,7 @@ export const setAutoImport = () => {
                     '@/api': ['api'],
                     '@/router': ['router'],
                     '@/api/axios': ['http'],
+                    '@/router/path': ['path'],
                     'use-immer': ['useImmer'],
                     '@/common/store': ['store'],
                     '@/common/util/env': ['env'],

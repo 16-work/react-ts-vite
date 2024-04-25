@@ -4,7 +4,7 @@ import { RouteObject } from 'react-router-dom';
 export const baseRoutes: RouteObject[] = [
     // 首页
     {
-        index: true,
+        path: path.home,
         Component: PageHome,
     },
 ];

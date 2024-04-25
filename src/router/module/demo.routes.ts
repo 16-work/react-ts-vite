@@ -1,14 +1,13 @@
 import { RouteObject } from 'react-router-dom';
 
 export default {
-    // path: '/auth',
     // children: [
     //     {
-    //         path: 'login',
+    //         path: path.login,
     //         Component: Login,
     //     },
     //     {
-    //         path: 'register',
+    //         path: path.login.register,
     //         Component: Register,
     //     },
     // ],
