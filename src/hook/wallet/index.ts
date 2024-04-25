@@ -33,6 +33,11 @@ export default () => {
             return defaultChains.findIndex((chain) => chain.chainId === account.chainId) !== -1;
         },
 
+        // 获取余额
+        getBalance: () => {
+            return getProvider().getBalance(account.address);
+        },
+
         // 获取验证信息
         getSignMessage: async () => {
             const signer = await getProvider().getSigner();
