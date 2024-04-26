@@ -6,7 +6,7 @@ import { PageNotFound } from '@/view/error/NotFound';
 
 export const browserRouter = createBrowserRouter([
     {
-        path: '/',
+        path: path.home,
         Component: Layout,
         children: [
             ...baseRoutes,

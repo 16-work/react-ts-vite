@@ -2,31 +2,41 @@
 .other {
     --c-gray-100:#D5DAE6;
     --c-gray-200:#B5B5B5;
-    --c-gray-300:rgba(255, 255, 255, 0.60);
+    --c-gray-300:rgba(#000, 0.60);
     --c-gray-400:#9F9F9F;
-    --c-gray-500:rgba(255, 255, 255, 0.10);
+    --c-gray-500:rgba(#000, 0.10);
     --c-gray-600:#363649;
     --c-gray-700:#303030;
+    --c-gray-750:#333333;
     --c-gray-800:#1F1F33;
     --c-gray-900:#11112A;
 
-    --c-scrollbar: rgba(0, 0, 0, 0.2);
+    --c-scrollbar: rgba(#000, 0.2);
 
-    --c-text-common: #333;
+    --c-text-common: var(--c-gray-750);
     --c-text-tip: #999;
 
     --c-hr-1: #ccc;
 
     --c-pager-btn-bg: #fff;
     --c-popover-bg: #fff;
+    --c-modal-bg: var(--c-gray-100);
+    --c-input-bg: var(--c-gray-300);
 
-    --c-row-active: rgba(0, 0, 0, 0.10);
+    --c-row-active: rgba(#000, 0.10);
 }
 
 // 主题色
 .base {
     --c-primary: #D64F49;
     --c-second: #E6AE54;
+
+    --c-primary-500: #d9443c;
+    --c-second-500: #e8aa47;
+
+    
+    --c-error: #ff3700;
+    --c-warning: #f2b51b;
 }
 
 @layer base {

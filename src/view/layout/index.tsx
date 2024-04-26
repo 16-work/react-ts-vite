@@ -6,6 +6,7 @@ import { useInitHooks } from '@/hook';
 export const Layout = () => {
     useSafariHacks();
     useInitRouterFun();
+    useInitHooks();
 
     useInitHooks();
     useWatchAccount();

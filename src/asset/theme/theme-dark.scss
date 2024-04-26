@@ -2,15 +2,16 @@
 .other {
     --c-gray-100:#D5DAE6;
     --c-gray-200:#B5B5B5;
-    --c-gray-300:rgba(255, 255, 255, 0.60);
+    --c-gray-300:rgba(#fff, 0.60);
     --c-gray-400:#9F9F9F;
-    --c-gray-500:rgba(255, 255, 255, 0.10);
+    --c-gray-500:rgba(#fff, 0.10);
     --c-gray-600:#363649;
     --c-gray-700:#303030;
+    --c-gray-750:#25253f;
     --c-gray-800:#1F1F33;
     --c-gray-900:#11112A;
 
-    --c-scrollbar: rgba(255, 255, 255, 0.1);
+    --c-scrollbar: var(--c-gray-500);
 
     --c-text-common: #fff;
     --c-text-tip: var(--c-gray-300);
@@ -18,15 +19,23 @@
     --c-hr-1: #333;
 
     --c-pager-btn-bg: var(--c-gray-800);
-    --c-popover-bg: var(--c-gray-800);
+    --c-popover-bg: var(--c-gray-750);
+    --c-modal-bg: var(--c-gray-800);
+    --c-input-bg: rgba(#000, 0.50);
 
-    --c-row-active: rgba(255, 255, 255, 0.10);
+    --c-row-active:  var(--c-gray-500);
 }
 
 // 主题色
 .base {
     --c-primary: #15D4F1;
     --c-second: #0080FA;
+
+    --c-primary-500: #00AEEF;
+    --c-second-500: #0073D9;
+
+    --c-error: #ff3700;
+    --c-warning: #f2b51b;
 }
 
 @layer base {
