@@ -11,7 +11,7 @@ export const screenSizes = {
 // 通用尺寸
 const getSizes = () => {
     const rootSize = 16; // 根元素大小
-    const maxPixel = 1500; // 注册尺寸的范围(1~max)
+    const maxPixel = 1536; // 注册尺寸的范围(1~max)
 
     let sizes = {} as Record<string, string>;
     for (let i = 1; i < maxPixel; i++) {
