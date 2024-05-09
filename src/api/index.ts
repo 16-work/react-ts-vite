@@ -1,3 +1,3 @@
-import demo from './demo';
+import user from './user';
 
-export const api = { demo };
+export const api = { user };

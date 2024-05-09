@@ -8,6 +8,9 @@ export const http = axios.create({
 /* 请求拦截 */
 http.interceptors.request.use(
     (config) => {
+        const token = localCache.get('token');
+        config.headers.Accept = 'application/json';
+        config.headers.Authorization = `Bearer ${token}`;
         return config;
     },
     (error) => Promise.reject(error)
