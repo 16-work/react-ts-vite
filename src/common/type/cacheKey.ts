@@ -1,1 +1,1 @@
-export type CacheKey = 'theme' | 'address';
+export type CacheKey = 'theme' | 'address' | 'token';
