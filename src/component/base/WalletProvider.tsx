@@ -1,16 +1,16 @@
+import { RainbowKitProvider, darkTheme, getDefaultConfig, lightTheme } from '@rainbow-me/rainbowkit';
+import '@rainbow-me/rainbowkit/styles.css';
+import { metaMaskWallet, okxWallet } from '@rainbow-me/rainbowkit/wallets';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactNode } from 'react';
 import { WagmiProvider } from 'wagmi';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { mainnet, sepolia } from 'wagmi/chains';
-import '@rainbow-me/rainbowkit/styles.css';
-import { getDefaultConfig, lightTheme, darkTheme, RainbowKitProvider } from '@rainbow-me/rainbowkit';
-import { metaMaskWallet, okxWallet } from '@rainbow-me/rainbowkit/wallets';
+import * as chains from 'wagmi/chains';
 
 // 配置项
 const config = getDefaultConfig({
     appName: 'Avascriptions',
     projectId: '8de5a8f4d65f36d28b3e25fb7129fbda',
-    chains: [mainnet, sepolia],
+    chains: [chains.mainnet, chains.sepolia, chains.avalancheFuji],
     wallets: [
         {
             groupName: 'Recommended',

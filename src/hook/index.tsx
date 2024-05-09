@@ -1,11 +1,11 @@
-import demo from './demo';
+import wallet from './wallet';
 
 // 类型声明
 export const hooks = {} as {
-    demo: ReturnType<typeof demo>;
+    wallet: ReturnType<typeof wallet>;
 };
 
 // 初始化
 export const useInitHooks = () => {
-    hooks.demo = demo();
+    hooks.wallet = wallet();
 };
