@@ -8,8 +8,10 @@ import { browserRouter } from './router/index.ts';
 import 'virtual:svg-icons-register';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-    <div className="h-full">
-        <RouterProvider router={browserRouter} />
-        <ToastContainer position="top-center" autoClose={2000} />
-    </div>
+    <WalletProvider>
+        <div className="h-full">
+            <RouterProvider router={browserRouter} />
+            <ToastContainer position="top-center" autoClose={2000} />
+        </div>
+    </WalletProvider>
 );
