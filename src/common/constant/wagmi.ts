@@ -1,5 +1,6 @@
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 import { metaMaskWallet, okxWallet, walletConnectWallet } from '@rainbow-me/rainbowkit/wallets';
+import { BinanceWallet } from '@/common/lib/wallet/binanace';
 import { SUPPORT_CHAINS } from './chain';
 
 export const WAGMI_CONFIG = getDefaultConfig({
@@ -9,7 +10,7 @@ export const WAGMI_CONFIG = getDefaultConfig({
     wallets: [
         {
             groupName: 'Recommended',
-            wallets: [metaMaskWallet, okxWallet, walletConnectWallet],
+            wallets: [metaMaskWallet, okxWallet, BinanceWallet, walletConnectWallet],
         },
     ],
 });

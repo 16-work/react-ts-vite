@@ -1,3 +1,7 @@
 export const PageHome = () => {
-    return <div></div>;
+    return (
+        <div>
+            <button onClick={() => hooks.wallet.connect()}>Login</button>
+        </div>
+    );
 };
