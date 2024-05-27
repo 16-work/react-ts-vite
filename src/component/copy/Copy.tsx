@@ -1,14 +1,15 @@
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { ReactNode } from 'react';
 
-export const Copy = (props: { children: JSX.Element; text: string }) => {
+export const Copy = (props: { children: ReactNode; text: string }) => {
     return (
-        <CopyToClipboard
-            text={props.text}
-            onCopy={() => {
+        <span
+            onClick={(e) => {
+                e.stopPropagation();
+                tools.copy(props.text);
                 msg.success('Copy successful!', { autoClose: 1000 });
             }}
         >
-            <span onClick={(e) => e.stopPropagation()}>{props.children}</span>
-        </CopyToClipboard>
+            {props.children}
+        </span>
     );
 };
