@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
-import '@/asset/theme/index.css';
-import '@/asset/css/base.scss';
+import '@/assets/theme/index.css';
+import '@/assets/css/base.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { RouterProvider } from 'react-router-dom';

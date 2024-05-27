@@ -1,7 +1,8 @@
-import { useInitHooks } from '@/hook';
-import { useInitRouterFun } from './hook/useInitRouterFun';
-import { useSafariHacks } from './hook/useSafariHacks';
-import { useWatchScreen } from './hook/useWatchScreen';
+import { useInitHooks } from '@/hooks';
+import { useInitRouterFun } from './hooks/useInitRouterFun';
+import { useSafariHacks } from './hooks/useSafariHacks';
+import { useWatchScreen } from './hooks/useWatchScreen';
+import { ReateAnimation } from './component/RouteAnimation';
 
 export const Layout = () => {
     useWatchScreen();

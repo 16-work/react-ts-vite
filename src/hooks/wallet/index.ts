@@ -43,7 +43,6 @@ export default () => {
         disconnect: () => {
             disconnect();
             setAccount({ address: '' });
-            localCache.remove('address');
             msg.success('Disconnection Successful!', { autoClose: 500 });
         },
 

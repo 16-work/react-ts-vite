@@ -1,4 +1,4 @@
-import { PageHome } from '@/view/home';
+import { PageHome } from '@/views/home';
 import { RouteObject } from 'react-router-dom';
 
 export const baseRoutes: RouteObject[] = [

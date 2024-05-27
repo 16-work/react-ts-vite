@@ -1,6 +1,6 @@
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 import { metaMaskWallet, okxWallet, walletConnectWallet } from '@rainbow-me/rainbowkit/wallets';
-import { BinanceWallet } from '@/common/lib/wallet/binanace';
+import { BinanceWallet } from '@/libs/wallet/binanace';
 import { SUPPORT_CHAINS } from './chain';
 
 export const WAGMI_CONFIG = getDefaultConfig({

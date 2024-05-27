@@ -1,4 +1,4 @@
-import { WAGMI_CONFIG } from '@/common/constant/wagmi';
+import { WAGMI_CONFIG } from '@/constants/wagmi';
 import { RainbowKitProvider, darkTheme, lightTheme } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';

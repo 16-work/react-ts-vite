@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { UserStore } from './types';
-import { CusChain } from '@/common/constant/chain';
+import { CusChain } from '@/constants/chain';
 
 export default create<UserStore>()(
     devtools(

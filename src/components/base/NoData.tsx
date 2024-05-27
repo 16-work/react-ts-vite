@@ -1,4 +1,4 @@
-import ImgNoData from '@/asset/img/no-data.png';
+import ImgNoData from '@/assets/img/no-data.png';
 
 export const NoData = () => {
     // 需要父元素有relative属性才能居中

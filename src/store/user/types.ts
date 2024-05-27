@@ -1,4 +1,4 @@
-import { CusChain } from '@/common/constant/chain';
+import { CusChain } from '@/constants/chain';
 
 export interface UserStore {
     account: {

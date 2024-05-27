@@ -1,4 +1,4 @@
-import { CusChain } from '@/common/constant/chain';
+import { CusChain } from '@/constants/chain';
 import { useConnectModal, useChainModal } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
 

@@ -4,7 +4,8 @@ export const PageHome = () => {
     return (
         <div>
             <button onClick={() => hooks.wallet.connect()}>Login</button>
-            <div>{account.address}</div>
+            <div onClick={() => tools.copy('123')}>{account.address}</div>
+            <button onClick={() => hooks.wallet.disconnect()}>Logout</button>
         </div>
     );
 };

@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Layout } from '@/view/layout';
+import { Layout } from '@/layout';
 import { baseRoutes } from './base.routes';
 import { moduleRoutes } from './module';
-import { PageNotFound } from '@/view/error/NotFound';
+import { PageNotFound } from '@/views/error/NotFound';
 
 export const browserRouter = createBrowserRouter([
     {

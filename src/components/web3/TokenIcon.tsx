@@ -1,5 +1,5 @@
 import { Image } from 'antd';
-import IconDefaultToken from '@/asset/img/token-default.png';
+import IconDefaultToken from '@/assets/img/token-default.png';
 
 export const TokenIcon = (props: { size: number; icon: string; className?: string }) => {
     const pxToRem = (px: number) => {
