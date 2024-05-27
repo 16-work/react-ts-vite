@@ -10,7 +10,7 @@ export default () => {
     const { openChainModal } = useChainModal();
     const { disconnect } = useDisconnect();
     const { signMessageAsync } = useSignMessage();
-    const { account, setAccount } = store.web3();
+    const { account, setAccount } = store.user();
 
     /** actions */
     useWatchAccount();

@@ -1,4 +1,4 @@
 import global from './global';
-import web3 from './web3';
+import user from './user';
 
-export const store = { global, web3 };
+export const store = { global, user };

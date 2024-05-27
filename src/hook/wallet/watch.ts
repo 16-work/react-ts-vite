@@ -1,13 +1,13 @@
+import { CusChain } from '@/common/constant/chain';
 import { useConnectModal, useChainModal } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
-import { Chain } from 'wagmi/chains';
 
 export default () => {
     const account = useAccount();
     const { connectModalOpen } = useConnectModal();
     const { chainModalOpen } = useChainModal();
 
-    const web3Store = store.web3();
+    const web3Store = store.user();
 
     // 监听账户变化
     useEffect(() => {
@@ -28,9 +28,9 @@ export default () => {
     // 监听链变化
     useEffect(() => {
         // 当前链支持
-        if (account.chain) web3Store.setAccount({ chain: account.chain });
+        if (account.chain) web3Store.setAccount({ chain: account.chain as CusChain });
         // 当前链不支持
-        else web3Store.setAccount({ chain: {} as Chain });
+        else web3Store.setAccount({ chain: {} as CusChain });
     }, [account.chainId]);
 
     // 监听切换链状态
