@@ -1,4 +1,9 @@
-import { arbitrumSepolia, Chain, sepolia } from 'wagmi/chains';
+import { arbitrumSepolia, Chain as WChain, sepolia } from 'wagmi/chains';
+
+// 自定义链类型
+export type CusChain = {
+    icon: string;
+} & WChain;
 
 // 默认链节点
 export enum SUPPORT_CHAIN {
@@ -13,7 +18,7 @@ export const SCAN_URL: Record<number, string> = {
 };
 
 // 默认链(正式网)
-const bobMainnet: Chain & { icon: string } = {
+const bobMainnet: CusChain = {
     id: SUPPORT_CHAIN.BOB_MAINNET,
     name: 'BOB Mainnet',
     nativeCurrency: {
@@ -35,7 +40,7 @@ const bobMainnet: Chain & { icon: string } = {
 };
 
 // 默认链(测试网)
-const bobTest: Chain & { icon: string } = {
+const bobTest: CusChain = {
     id: SUPPORT_CHAIN.BOB_TESTNET,
     name: 'BOB Testnet (Sepolia)',
     nativeCurrency: {
