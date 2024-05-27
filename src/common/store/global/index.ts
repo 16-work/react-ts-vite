@@ -8,6 +8,9 @@ export default create<GlobalStore>()(
             (set) => ({
                 theme: 'theme-dark',
                 setTheme: (theme) => set(() => ({ theme })),
+
+                isPC: true,
+                setIsPC: (bool) => set(() => ({ isPC: bool })),
             }),
             { name: 'global' }
         )

@@ -1,8 +1,10 @@
 import { useInitHooks } from '@/hook';
 import { useInitRouterFun } from './hook/useInitRouterFun';
 import { useSafariHacks } from './hook/useSafariHacks';
+import { useWatchScreen } from './hook/useWatchScreen';
 
 export const Layout = () => {
+    useWatchScreen();
     useSafariHacks();
     useInitRouterFun();
     useInitHooks();
