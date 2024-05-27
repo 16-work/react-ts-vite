@@ -19,7 +19,7 @@ export const setAutoImport = () => {
                     '@/common/util/env': ['env'],
                     '@/hook/index.tsx': ['hooks'],
                     'react-hook-form': ['useForm'],
-                    '@/common/util/debug': ['debug'],
+                    '@/common/util/tools': ['tools'],
                     numeral: [['default', 'numeral']],
                     '@/common/util/format': ['format'],
                     'react-toastify': [['toast', 'msg']],

@@ -1,4 +1,4 @@
-export const debug = {
+export const tools = {
     sleep: (ms: number) => new Promise((resolve) => setTimeout(resolve, ms)),
 
     logTimeOverhead: (func: Function) => {
