@@ -1,24 +1,14 @@
-import { RainbowKitProvider, darkTheme, getDefaultConfig, lightTheme } from '@rainbow-me/rainbowkit';
+import { WAGMI_CONFIG } from '@/common/constant/wagmi';
+import { RainbowKitProvider, darkTheme, lightTheme } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
-import { metaMaskWallet, okxWallet } from '@rainbow-me/rainbowkit/wallets';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactNode } from 'react';
 import { WagmiProvider } from 'wagmi';
-import * as chains from 'wagmi/chains';
 
-// 配置项
-const config = getDefaultConfig({
-    appName: 'Avascriptions',
-    projectId: '8de5a8f4d65f36d28b3e25fb7129fbda',
-    chains: [chains.mainnet, chains.sepolia, chains.avalancheFuji],
-    wallets: [
-        {
-            groupName: 'Recommended',
-            wallets: [metaMaskWallet, okxWallet],
-        },
-    ],
-});
 const queryClient = new QueryClient();
+
+// 主题
+const theme = { accentColor: 'var(--c-primary)' };
 
 export const WalletProvider = (props: { children: ReactNode }) => {
     /** params */
@@ -27,9 +17,9 @@ export const WalletProvider = (props: { children: ReactNode }) => {
 
     /** template */
     return (
-        <WagmiProvider config={config}>
+        <WagmiProvider config={WAGMI_CONFIG}>
             <QueryClientProvider client={queryClient}>
-                <RainbowKitProvider theme={store.global().theme === 'theme-light' ? lightTheme() : darkTheme()} coolMode>
+                <RainbowKitProvider theme={store.global().theme === 'theme-light' ? lightTheme(theme) : darkTheme(theme)} coolMode>
                     {props.children}
                 </RainbowKitProvider>
             </QueryClientProvider>
