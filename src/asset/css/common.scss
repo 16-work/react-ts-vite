@@ -2,12 +2,7 @@
 @import './text.scss';
 @import './button.scss';
 @import './input.scss';
-
-// 渐变
-.gradient {
-    @apply bg-gradient-to-r from-[--c-primary] via-[--c-second-500] to-[--c-second]
-    bg-[length:200%_200%] bg-[0%_0%] hover:bg-[100%_100%] transition-all duration-500;
-} 
+@import './gradient.scss';
 
 // 定位居中
 .position-center {
